@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/screens/all_tasks_screen.dart';
+import 'package:todoapp/screens/sign_in_screen.dart';
 import 'package:todoapp/screens/splash_screen.dart';
 
 void main() {
@@ -13,7 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-          home: SplashScreen(),
+        
+          initialRoute: '/',
+      routes: {
+        '/': (context) => SplashScreen(),
+        '/login': (context) => LoginScreen(),
+        '/all_task':(context)=> TodayScreen(),
+      },
     );
   }
 }

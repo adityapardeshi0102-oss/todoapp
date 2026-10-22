@@ -72,10 +72,48 @@ class SplashScreen extends StatelessWidget {
               ),
 
               SizedBox(height: 48),
-             
-              button('Get started', filled: true),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF5145ED),
+                  foregroundColor: Colors.white,
+                  minimumSize: Size(double.infinity, 52),
+                  elevation: 8,
+                  shadowColor: Color(0xFF5145ED).withOpacity(0.20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: Text(
+                  'Get started',
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                ),
+              ),
+
               SizedBox(height: 12),
-              button('I have an account', filled: false),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  foregroundColor: Color(0xFF5145ED),
+                  minimumSize: Size(double.infinity, 52),
+                  elevation: 0,
+                  side: BorderSide(color: Color(0xFFC9CFFF), width: 1),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: Text(
+                  'I have an account',
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                ),
+              ),
 
               SizedBox(height: 24),
             ],
@@ -84,7 +122,6 @@ class SplashScreen extends StatelessWidget {
       ),
     );
   }
-
 
   Widget button(String text, {required bool filled}) {
     return SizedBox(
